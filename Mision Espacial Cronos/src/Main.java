@@ -47,6 +47,11 @@ public class Main {
     }
 
     public static void mostrarValoresMaximos() {
-        // El resto del código permanece igual
+        System.out.println("Máximo valor para byte: " + Byte.MAX_VALUE);
+        System.out.println("Máximo valor para short: " + Short.MAX_VALUE);
+        System.out.println("Máximo valor para int: " + Integer.MAX_VALUE);
+        System.out.println("Máximo valor para long: " + Long.MAX_VALUE);
+        System.out.println("Máximo valor para float: " + Float.MAX_VALUE);
+        System.out.println("Máximo valor para double: " + Double.MAX_VALUE);
     }
 }
