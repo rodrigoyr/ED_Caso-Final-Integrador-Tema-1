@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Cronómetro Cósmico
+        // Mostrar los valores máximos
         mostrarValoresMaximos();
 
         Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario que ingrese el tiempo en la Tierra
         System.out.println("Por favor, ingresa el tiempo en la Tierra:");
         long tiempoTierra = scanner.nextLong();
 
@@ -32,8 +34,10 @@ public class Main {
                 break;
         }
 
+        // Calcular y mostrar el tiempo en el nuevo planeta
         calcularTiempo(tiempoTierraSegundos);
 
+        // Solicitar al usuario que ingrese la cantidad de recursos consumidos por día
         System.out.println("Por favor, ingresa la cantidad de recursos consumidos por día:");
         int recursosPorDia = scanner.nextInt();
 
@@ -43,11 +47,11 @@ public class Main {
         System.out.println("Por favor, ingresa la cantidad total de recursos disponibles:");
         int totalRecursos = scanner.nextInt();
 
+        // Calcular y mostrar el consumo de recursos
         calcularConsumoRecursos(recursosPorDia, periodo, totalRecursos);
     }
 
     public static void calcularTiempo(long tiempoTierraSegundos) {
-        // Supongamos que el tiempo en el nuevo planeta es el doble que en la Tierra
         long tiempoPlanetaSegundos = tiempoTierraSegundos * 2;
         long tiempoPlanetaMinutos = tiempoPlanetaSegundos / 60;
         long tiempoPlanetaHoras = tiempoPlanetaMinutos / 60;
@@ -60,8 +64,8 @@ public class Main {
     public static void calcularConsumoRecursos(int recursosPorDia, int periodo, int totalRecursos) {
         int consumoTotal = recursosPorDia * periodo;
         int media = consumoTotal / periodo;
-        int minimo = recursosPorDia; // Suponemos que el mínimo es la cantidad consumida por día
-        int maximo = consumoTotal; // Suponemos que el máximo es el consumo total
+        int minimo = recursosPorDia;
+        int maximo = consumoTotal;
         int recursosRestantes = totalRecursos - consumoTotal;
 
         System.out.printf("Consumo total de recursos: %d%n", consumoTotal);
