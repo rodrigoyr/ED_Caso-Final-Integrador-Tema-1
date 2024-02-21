@@ -1,4 +1,4 @@
-public class Main {
+public class TimeConverter {
     private double dayLengthOnNewPlanet;
 
     public TimeConverter(double dayLengthOnNewPlanet) {
@@ -36,5 +36,19 @@ public class Main {
         System.out.println("Max long: " + Long.MAX_VALUE);
         System.out.println("Max float: " + Float.MAX_VALUE);
         System.out.println("Max double: " + Double.MAX_VALUE);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        TimeConverter converter = new TimeConverter(1.5); // Supongamos que un día en el nuevo planeta es 1.5 días en la Tierra
+
+        double earthSeconds = 60;
+        double newPlanetTime = converter.convertSeconds(earthSeconds);
+        System.out.println(earthSeconds + " seconds on Earth is " + newPlanetTime + " seconds on the new planet.");
+
+        // Haz lo mismo para minutos, horas, días y años
+
+        converter.displayMaxValues();
     }
 }
