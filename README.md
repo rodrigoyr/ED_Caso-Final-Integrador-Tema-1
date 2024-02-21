@@ -8,3 +8,12 @@
 5. Navegador Estelar: Calcula caminos de exploración, utilizando matrices para mostrar el terreno.
 6. Comunicador Interplanetario: Examina y convierte mensajes, confirma que la comunicación sea completa y buena.
 ### Explicación de los algoritmos y estructuras de datos utilizados.
+1. Cronometro Cósmico: 
+2. Recursos y Suministros:
+3. Sistema de Alerta y Monitoreo:
+4. Planificador de Tareas:
+5. Navegador Estelar:
+6. Comunicador Interplanetario:
+### Desafíos encontrados durante el desarrollo y cómo se resolvieron.
+
+### Instrucciones de uso y casos de prueba para demostrar la funcionalidad.
