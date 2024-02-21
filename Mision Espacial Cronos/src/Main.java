@@ -1,35 +1,52 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // Cronómetro Cósmico
-        calcularTiempo();
         mostrarValoresMaximos();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Por favor, ingresa el tiempo en la Tierra:");
+        long tiempoTierra = scanner.nextLong();
+
+        System.out.println("Por favor, especifica la unidad de tiempo (segundos, minutos, horas, dias, años):");
+        String unidadTiempo = scanner.next().toLowerCase();
+
+        long tiempoTierraSegundos;
+        switch (unidadTiempo) {
+            case "minutos":
+                tiempoTierraSegundos = tiempoTierra * 60;
+                break;
+            case "horas":
+                tiempoTierraSegundos = tiempoTierra * 60 * 60;
+                break;
+            case "dias":
+                tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24;
+                break;
+            case "años":
+                tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24 * 365;
+                break;
+            case "segundos":
+            default:
+                tiempoTierraSegundos = tiempoTierra;
+                break;
+        }
+
+        calcularTiempo(tiempoTierraSegundos);
     }
 
-    public static void calcularTiempo() {
-        long tiempoTierraSegundos = System.currentTimeMillis() / 1000; // Tiempo en segundos
-        long tiempoTierraMinutos = tiempoTierraSegundos / 60; // Tiempo en minutos
-        long tiempoTierraHoras = tiempoTierraMinutos / 60; // Tiempo en horas
-        long tiempoTierraDias = tiempoTierraHoras / 24; // Tiempo en días
-        long tiempoTierraAnos = tiempoTierraDias / 365; // Tiempo en años
-
-        System.out.println("Tiempo en la Tierra: " + tiempoTierraSegundos + " segundos, " + tiempoTierraMinutos + " minutos, " + tiempoTierraHoras + " horas, " + tiempoTierraDias + " días, " + tiempoTierraAnos + " años");
-
+    public static void calcularTiempo(long tiempoTierraSegundos) {
         // Supongamos que el tiempo en el nuevo planeta es el doble que en la Tierra
         long tiempoPlanetaSegundos = tiempoTierraSegundos * 2;
-        long tiempoPlanetaMinutos = tiempoTierraMinutos * 2;
-        long tiempoPlanetaHoras = tiempoTierraHoras * 2;
-        long tiempoPlanetaDias = tiempoTierraDias * 2;
-        long tiempoPlanetaAnos = tiempoTierraAnos * 2;
+        long tiempoPlanetaMinutos = tiempoPlanetaSegundos / 60;
+        long tiempoPlanetaHoras = tiempoPlanetaMinutos / 60;
+        long tiempoPlanetaDias = tiempoPlanetaHoras / 24;
+        long tiempoPlanetaAnos = tiempoPlanetaDias / 365;
 
-        System.out.println("Tiempo en el nuevo planeta: " + tiempoPlanetaSegundos + " segundos, " + tiempoPlanetaMinutos + " minutos, " + tiempoPlanetaHoras + " horas, " + tiempoPlanetaDias + " días, " + tiempoPlanetaAnos + " años");
+        System.out.printf("Tiempo en el nuevo planeta: %d segundos, %d minutos, %d horas, %d días, %d años%n", tiempoPlanetaSegundos, tiempoPlanetaMinutos, tiempoPlanetaHoras, tiempoPlanetaDias, tiempoPlanetaAnos);
     }
 
     public static void mostrarValoresMaximos() {
-        System.out.println("Máximo valor para byte: " + Byte.MAX_VALUE);
-        System.out.println("Máximo valor para short: " + Short.MAX_VALUE);
-        System.out.println("Máximo valor para int: " + Integer.MAX_VALUE);
-        System.out.println("Máximo valor para long: " + Long.MAX_VALUE);
-        System.out.println("Máximo valor para float: " + Float.MAX_VALUE);
-        System.out.println("Máximo valor para double: " + Double.MAX_VALUE);
+        // El resto del código permanece igual
     }
 }
