@@ -5,29 +5,39 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Cronómetro Cósmico
-        System.out.println("Por favor, ingresa el tiempo en la Tierra:");
-        long tiempoTierra = scanner.nextLong();
-        System.out.println("Por favor, especifica la unidad de tiempo (segundos, minutos, horas, dias, años):");
-        String unidadTiempo = scanner.next().toLowerCase();
-        long tiempoTierraSegundos;
-        switch (unidadTiempo) {
-            case "minutos":
-                tiempoTierraSegundos = tiempoTierra * 60;
-                break;
-            case "horas":
-                tiempoTierraSegundos = tiempoTierra * 60 * 60;
-                break;
-            case "dias":
-                tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24;
-                break;
-            case "años":
-                tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24 * 365;
-                break;
-            case "segundos":
-            default:
-                tiempoTierraSegundos = tiempoTierra;
-                break;
-        }
+        long tiempoTierraSegundos = 0;
+        boolean entradaValida = false;
+        do {
+            try {
+                System.out.println("Por favor, ingresa el tiempo en la Tierra:");
+                long tiempoTierra = scanner.nextLong();
+                System.out.println("Por favor, especifica la unidad de tiempo (segundos, minutos, horas, dias, años):");
+                String unidadTiempo = scanner.next().toLowerCase();
+                switch (unidadTiempo) {
+                    case "minutos":
+                        tiempoTierraSegundos = tiempoTierra * 60;
+                        break;
+                    case "horas":
+                        tiempoTierraSegundos = tiempoTierra * 60 * 60;
+                        break;
+                    case "dias":
+                        tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24;
+                        break;
+                    case "años":
+                        tiempoTierraSegundos = tiempoTierra * 60 * 60 * 24 * 365;
+                        break;
+                    case "segundos":
+                    default:
+                        tiempoTierraSegundos = tiempoTierra;
+                        break;
+                }
+                entradaValida = true;
+            } catch (Exception e) {
+                System.out.println("Entrada no válida. Por favor, intenta de nuevo.");
+                scanner.nextLine();
+            }
+        } while (!entradaValida);
+
         long tiempoPlanetaSegundos = tiempoTierraSegundos * 2;
         System.out.printf("Tiempo en el nuevo planeta: %d segundos%n", tiempoPlanetaSegundos);
 
@@ -40,7 +50,6 @@ public class Main {
         System.out.printf("Consumo total de recursos: %d%n", consumoTotal);
 
         // Sistema de Alerta y Monitoreo
-        // Este es un ejemplo simplificado, en un programa real, estos valores serían monitoreados constantemente, no solo una vez.
         System.out.println("Por favor, ingresa el nivel de radiación actual:");
         int radiacion = scanner.nextInt();
         System.out.println("Por favor, ingresa la temperatura actual:");
@@ -52,7 +61,6 @@ public class Main {
         }
 
         // Planificador de Tareas
-        // Este es un ejemplo simplificado, en un programa real, las tareas serían asignadas a cada miembro de la tripulación.
         System.out.println("Por favor, ingresa el número de tareas a asignar:");
         int tareas = scanner.nextInt();
         for (int i = 1; i <= tareas; i++) {
@@ -60,7 +68,6 @@ public class Main {
         }
 
         // Navegador Estelar
-        // Este es un ejemplo simplificado, en un programa real, las matrices representarían el terreno y se utilizarían para planificar construcciones.
         System.out.println("Por favor, ingresa el tamaño del terreno (un número entero):");
         int tamano = scanner.nextInt();
         int[][] terreno = new int[tamano][tamano];
