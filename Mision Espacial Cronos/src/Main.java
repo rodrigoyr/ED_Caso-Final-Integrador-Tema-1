@@ -38,7 +38,7 @@ public class Main {
             }
         } while (!entradaValida);
 
-        long tiempoPlanetaSegundos = tiempoTierraSegundos * 2;
+        long tiempoPlanetaSegundos = tiempoTierraSegundos * 2; // Suponiendo que un día en el nuevo planeta dura el doble que en la Tierra
         System.out.printf("Tiempo en el nuevo planeta: %d segundos%n", tiempoPlanetaSegundos);
 
         // Recursos y Suministros
