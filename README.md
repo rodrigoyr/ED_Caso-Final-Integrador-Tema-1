@@ -1,4 +1,4 @@
 # ED_Caso-Final-Integrador-Tema-1
 ## Informe de proyecto
 ### 1. Cronómetro Cósmico
-El proposito inicial que tenia en este ejercicio era declarar el tiempo del planeta anterior en una clase y pasarlo en esa misma al tiempo del nuevo planeta, después declararlo todo y pasarlo al main. En un principio esa era mi idea, pero al tener varios fallos y ver que no era del todo correcto y organizado mi código he optado por añadirlo todo en la clase main paso a paso. La única destructura de datos que he utilizado es una variable estattica de tipo double para la información de un día el nuevo planeta. En cuanto a los algoritmos he hecho uso de varias operaciones matema´tivas para la conversión de tiempos entre planetas, además de una función que muestra el tiempo del nuevo planeta y una que muestra los valores máximos.
+
