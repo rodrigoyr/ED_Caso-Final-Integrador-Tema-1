@@ -1,4 +1,5 @@
 # ED_Caso-Final-Integrador-Tema-1
+https://github.com/rodrigoyr/ED_Caso-Final-Integrador-Tema-1.git
 ## Informe de proyecto
 ### Descripción de cada módulo y su propósito dentro de la misión.
 1. Cronometro Cósmisco: Este modulo calcula y muestra el tiempo en diferentes unidades en la Tierra y realiza la conversión al nuevo planeta.
