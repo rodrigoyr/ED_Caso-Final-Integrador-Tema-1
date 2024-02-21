@@ -1,54 +1,35 @@
 public class Main {
     public static void main(String[] args) {
         // Cronómetro Cósmico
-        long tiempoTierra = System.currentTimeMillis() / 1000; // Tiempo en segundos
-        long tiempoPlaneta = tiempoTierra * 2; // Supongamos que el tiempo en el nuevo planeta es el doble que en la Tierra
+        calcularTiempo();
+        mostrarValoresMaximos();
+    }
 
-        // Recursos y Suministros
-        int agua = 100; // Cantidad inicial de agua
-        int comida = 100; // Cantidad inicial de comida
-        int oxigeno = 100; // Cantidad inicial de oxígeno
-        int dias = 5; // Consumo cada 5 días
-        agua -= dias * 2; // Supongamos que se consumen 2 unidades de agua al día
-        comida -= dias * 3; // Supongamos que se consumen 3 unidades de comida al día
-        oxigeno -= dias * 4; // Supongamos que se consumen 4 unidades de oxígeno al día
+    public static void calcularTiempo() {
+        long tiempoTierraSegundos = System.currentTimeMillis() / 1000; // Tiempo en segundos
+        long tiempoTierraMinutos = tiempoTierraSegundos / 60; // Tiempo en minutos
+        long tiempoTierraHoras = tiempoTierraMinutos / 60; // Tiempo en horas
+        long tiempoTierraDias = tiempoTierraHoras / 24; // Tiempo en días
+        long tiempoTierraAnos = tiempoTierraDias / 365; // Tiempo en años
 
-        // Sistema de Alerta y Monitoreo
-        int radiacion = 50; // Nivel de radiación
-        int temperatura = 20; // Temperatura
-        int presion = 1000; // Presión
-        if (radiacion > 100 || temperatura > 40 || presion > 2000) {
-            System.out.println("Alerta: valores extremos detectados");
-        }
+        System.out.println("Tiempo en la Tierra: " + tiempoTierraSegundos + " segundos, " + tiempoTierraMinutos + " minutos, " + tiempoTierraHoras + " horas, " + tiempoTierraDias + " días, " + tiempoTierraAnos + " años");
 
-        // Planificador de Tareas
-        String[] tripulacion = {"Miembro1", "Miembro2", "Miembro3"};
-        String[] tareas = {"Tarea1", "Tarea2", "Tarea3"};
-        for (int i = 0; i < tripulacion.length; i++) {
-            System.out.println(tripulacion[i] + " debe realizar la " + tareas[i]);
-        }
+        // Supongamos que el tiempo en el nuevo planeta es el doble que en la Tierra
+        long tiempoPlanetaSegundos = tiempoTierraSegundos * 2;
+        long tiempoPlanetaMinutos = tiempoTierraMinutos * 2;
+        long tiempoPlanetaHoras = tiempoTierraHoras * 2;
+        long tiempoPlanetaDias = tiempoTierraDias * 2;
+        long tiempoPlanetaAnos = tiempoTierraAnos * 2;
 
-        // Navegador Estelar
-        int[][] terreno = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] construcciones = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
-        int[][] resultado = new int[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 3; k++) {
-                    resultado[i][j] += terreno[i][k] * construcciones[k][j];
-                }
-            }
-        }
+        System.out.println("Tiempo en el nuevo planeta: " + tiempoPlanetaSegundos + " segundos, " + tiempoPlanetaMinutos + " minutos, " + tiempoPlanetaHoras + " horas, " + tiempoPlanetaDias + " días, " + tiempoPlanetaAnos + " años");
+    }
 
-        // Comunicador Interplanetario
-        String mensaje = "Hola Mundo";
-        int vocales = 0;
-        for (char c : mensaje.toCharArray()) {
-            if ("aeiouAEIOU".indexOf(c) != -1) {
-                vocales++;
-            }
-        }
-        String invertido = new StringBuilder(mensaje).reverse().toString();
-        boolean esPalindromo = mensaje.equalsIgnoreCase(invertido);
+    public static void mostrarValoresMaximos() {
+        System.out.println("Máximo valor para byte: " + Byte.MAX_VALUE);
+        System.out.println("Máximo valor para short: " + Short.MAX_VALUE);
+        System.out.println("Máximo valor para int: " + Integer.MAX_VALUE);
+        System.out.println("Máximo valor para long: " + Long.MAX_VALUE);
+        System.out.println("Máximo valor para float: " + Float.MAX_VALUE);
+        System.out.println("Máximo valor para double: " + Double.MAX_VALUE);
     }
 }
