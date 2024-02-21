@@ -40,7 +40,10 @@ public class Main {
         System.out.println("Por favor, especifica el número de días, semanas o meses para los que se debe calcular el consumo (en múltiplos de 5):");
         int periodo = scanner.nextInt();
 
-        calcularConsumoRecursos(recursosPorDia, periodo);
+        System.out.println("Por favor, ingresa la cantidad total de recursos disponibles:");
+        int totalRecursos = scanner.nextInt();
+
+        calcularConsumoRecursos(recursosPorDia, periodo, totalRecursos);
     }
 
     public static void calcularTiempo(long tiempoTierraSegundos) {
@@ -54,16 +57,18 @@ public class Main {
         System.out.printf("Tiempo en el nuevo planeta: %d segundos, %d minutos, %d horas, %d días, %d años%n", tiempoPlanetaSegundos, tiempoPlanetaMinutos, tiempoPlanetaHoras, tiempoPlanetaDias, tiempoPlanetaAnos);
     }
 
-    public static void calcularConsumoRecursos(int recursosPorDia, int periodo) {
+    public static void calcularConsumoRecursos(int recursosPorDia, int periodo, int totalRecursos) {
         int consumoTotal = recursosPorDia * periodo;
         int media = consumoTotal / periodo;
         int minimo = recursosPorDia; // Suponemos que el mínimo es la cantidad consumida por día
         int maximo = consumoTotal; // Suponemos que el máximo es el consumo total
+        int recursosRestantes = totalRecursos - consumoTotal;
 
         System.out.printf("Consumo total de recursos: %d%n", consumoTotal);
         System.out.printf("Media de recursos consumidos: %d%n", media);
         System.out.printf("Mínimo de recursos consumidos: %d%n", minimo);
         System.out.printf("Máximo de recursos consumidos: %d%n", maximo);
+        System.out.printf("Recursos restantes: %d%n", recursosRestantes);
     }
 
     public static void mostrarValoresMaximos() {
