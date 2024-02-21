@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     private static double dayLengthOnNewPlanet = 1.5; // Supongamos que un día en el nuevo planeta es 1.5 días en la Tierra
 
@@ -48,6 +50,38 @@ public class Main {
         System.out.println("Max double: " + Double.MAX_VALUE);
     }
 
+    public static void convertUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the time on Earth in seconds, minutes, hours or days:");
+        double earthTime = scanner.nextDouble();
+
+        System.out.println("Enter the unit of time (seconds, minutes, hours, days):");
+        String unit = scanner.next();
+
+        double newPlanetTime;
+        switch (unit.toLowerCase()) {
+            case "seconds":
+                newPlanetTime = convertSeconds(earthTime);
+                break;
+            case "minutes":
+                newPlanetTime = convertMinutes(earthTime);
+                break;
+            case "hours":
+                newPlanetTime = convertHours(earthTime);
+                break;
+            case "days":
+                newPlanetTime = convertDays(earthTime);
+                break;
+            default:
+                System.out.println("Invalid unit of time. Please enter seconds, minutes, hours or days.");
+                return;
+        }
+
+        System.out.println(earthTime + " " + unit + " on Earth is " + newPlanetTime + " days on the new planet.");
+        displayTimeInDifferentFormats(newPlanetTime);
+    }
+
     public static void main(String[] args) {
         double earthSeconds = 60;
         double newPlanetTime = convertSeconds(earthSeconds);
@@ -75,5 +109,7 @@ public class Main {
         displayTimeInDifferentFormats(newPlanetTimeYears);
 
         displayMaxValues();
+
+        convertUserInput();
     }
 }
